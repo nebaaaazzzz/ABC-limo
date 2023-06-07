@@ -1,6 +1,6 @@
 import * as ax from "axios";
-//export const BASE_URL = "https://limo-service-backend-2.onrender.com";
-export const BASE_URL = "http://localhost"
+export const BASE_URL = "https://limo-service-backend-2.onrender.com";
+
 const axios = ax.default.create({
   baseURL: BASE_URL,
 });
