@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 
 import { Container, Row, Col } from "reactstrap";
 import { Link, NavLink } from "react-router-dom";
+import { Icon } from '@iconify/react';
 import "../../styles/header.css";
 
 const navLinks = [
@@ -36,7 +37,7 @@ const Header = () => {
   return (
     <header className="header">
       {/* ============ header top ============ */}
-      <div className="header__top">
+      {/* <div className="header__middle">
         <Container>
           <Row>
             <Col lg="6" md="6" sm="6">
@@ -53,7 +54,7 @@ const Header = () => {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div> */}
 
       {/* =============== header middle =========== */}
       <div className="header__middle">
@@ -63,9 +64,9 @@ const Header = () => {
               <div className="logo">
                 <h1>
                   <Link to="/home" className=" d-flex align-items-center gap-2">
-                    <i class="ri-car-line"></i>
-                    <span>
-                    ABC<br />Limo 
+                  <Icon icon="mdi:car-limousine" color="white" />
+                    <span className="abc">
+                       ABC<br />Limo  
                     </span>
                   </Link>
                 </h1>
@@ -78,7 +79,7 @@ const Header = () => {
                   <i class="ri-earth-line"></i>
                 </span>
                 <div className="header__location-content">
-                  <h4>United States</h4>
+                  <h4 >United States</h4>
                   <h6>Seattle, Washington USA</h6>
                 </div>
               </div>
@@ -91,7 +92,7 @@ const Header = () => {
                 </span>
                 <div className="header__location-content">
                   
-                  <h7>    24/7</h7>
+                  <h7 className="h7">    24/7</h7>
                 </div>
               </div>
             </Col>

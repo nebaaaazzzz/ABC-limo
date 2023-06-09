@@ -4,6 +4,15 @@
   
   color: #fff;
 }
+.h7{
+  -webkit-text-fill-color: #fff;
+}
+.ri-car-line{
+  color: #fff;
+}
+.abc{
+  -webkit-text-fill-color: #fff;
+}
 
 .header__top__left {
   display: flex;
@@ -43,6 +52,7 @@
 
 .header__middle {
   padding: 20px 0px;
+  background-color: #1e0778;
 }
 
 .logo h1 a span {
@@ -61,24 +71,28 @@
 
 .logo h1 {
   line-height: 1.5rem;
+  -webkit-text-fill-color: #fff;
 }
 
 .header__location span i {
   font-size: 2.2rem;
   color: #000000;
+  -webkit-text-fill-color: #fff;
 }
 
 .header__location-content h4 {
   font-size: 1.2rem;
+  -webkit-text-fill-color: #fff;
   font-weight: 700;
   color: #000000;
 }
 .header__location-content h6 {
   font-weight: 600;
+  -webkit-text-fill-color: #fff;
 }
 
 .header__btn {
- background:  #1e0778 !important;
+ background:  #d10bb6 !important;
   padding: 10px 20px;
   border: none;
   outline: none;
@@ -129,7 +143,7 @@
 }
 
 .nav__item:hover {
-  color: #f9a826;
+  color: #d10bb6;
 }
 
 .search__box {
@@ -158,7 +172,7 @@
 }
 
 .nav__active {
-  color: #f9a826;
+  color: #d10bb6;
 }
 
 @media only screen and (max-width: 768px) {

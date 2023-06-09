@@ -6,7 +6,7 @@ import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import { useParams } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
 
-import commentImg from "../assets/all-images/ava-1.jpg";
+
 
 import "../styles/blog-details.css";
 import {
@@ -23,7 +23,6 @@ import { toast } from "react-toastify";
 
 const BlogDetails = () => {
   const { slug } = useParams();
-  // const blog = blogData.find((blog) => blog.title === slug);
   const { data, isLoading, isError } = useQuery(["blog", slug], () =>
     getBlog(slug)
   );
@@ -86,25 +85,7 @@ const BlogDetails = () => {
                 <p className="section__description">{data.content}</p>
               </div>
 
-              {/* <div className="comment__list mt-5">
-                <h4 className="mb-5">Comments</h4>
-                {commentData?.pages?.map((comments) => {
-                  return comments.map((comment) => {
-                    return <Comment data={comment} />;
-                  });
-                })}
-                {isCommentLoading && <Loading />}
-                {commentHasNextPage && (
-                  <button
-                    onClick={() => fetchCommentNextPage()}
-                    className="btn btn-primary"
-                  >
-                    Load more
-                  </button>
-                )}
-                {/* =============== comment form ============ */}
-                {/* <CommentForm id={data.id} />
-              </div> */} *
+              
             </Col>
           </Row>
         </Container>
