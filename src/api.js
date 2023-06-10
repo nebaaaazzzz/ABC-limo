@@ -27,6 +27,11 @@ export async function postReservation(body) {
   const { data } = await axios.post(`/book`, body);
   return data;
 }
+
+export async function contactFormMail(body) {
+  const { data } = await axios.post(`/mail`, body);
+  return data;
+}
 export async function postComment(body) {
   const { data } = await axios.post(`/comment`, body);
   return data;
