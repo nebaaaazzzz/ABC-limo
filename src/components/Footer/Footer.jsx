@@ -72,7 +72,7 @@ const Footer = () => {
               <p className="office__info">Area the company works </p>{" "}
               <p className="office__info">Phone:</p>
               <p className="office__info">Email:</p>
-              <p className="office__info">Office Time:</p>
+              
             </div>
           </Col>
 
