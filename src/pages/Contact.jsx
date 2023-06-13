@@ -42,15 +42,7 @@ const Contact = () => {
     //   .then(
     //     (result) => {
     //       console.log(result.text);
-    //       toast.success("Message sent, We will contact you shortly", {
-    //         position: toast.POSITION.TOP_CENTER,
-    //         autoClose: 5000,
-    //         hideProgressBar: true,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //       });
+    //     
     //     },
     //     (error) => {
     //       alert(
@@ -58,6 +50,15 @@ const Contact = () => {
     //       );
     //     }
     //   );
+      toast.success("Message sent, We will contact you shortly", {
+             position: toast.POSITION.TOP_CENTER,
+             autoClose: 5000,
+             hideProgressBar: true,
+             closeOnClick: true,
+             pauseOnHover: true,
+             draggable: true,
+             progress: undefined,
+           });
     form.current.reset();
   };
 
