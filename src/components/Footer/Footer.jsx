@@ -3,6 +3,7 @@ import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../../styles/footer.css";
+import { Icon } from '@iconify/react';
 
 const quickLinks = [
   {
@@ -34,7 +35,7 @@ const Footer = () => {
             <div className="logo footer__logo">
               <h1>
                 <Link to="/home" className=" d-flex align-items-center gap-2">
-                  <i class="ri-car-line"></i>
+                <Icon icon="mdi:car-limousine" color="white" />
                   <span>
                     ABC
                     <br />
