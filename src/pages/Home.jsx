@@ -33,12 +33,12 @@ const Home = () => {
         </Container>
       </section>
 
-      <AboutSection />
+      
 
       <section className="p-0 hero__slider-section">
         <HeroSlider />
         <div className="hero__form">
-          {/* <Container>
+          <Container>
             <Row className="form__row">
               <Col lg="4" md="4">
                 <div className="find__cars-left">
@@ -49,9 +49,11 @@ const Home = () => {
                 <FindCarForm />
               </Col>
             </Row>
-          </Container> */}
+          </Container>
         </div>
       </section>
+
+      <AboutSection />
    
       
       <section>
