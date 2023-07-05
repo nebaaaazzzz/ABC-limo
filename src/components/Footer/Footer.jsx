@@ -35,12 +35,10 @@ const Footer = () => {
             <div className="logo footer__logo">
               <h1>
                 <Link to="/home" className=" d-flex align-items-center gap-2">
-                <Icon icon="mdi:car-limousine" color="white" />
-                  <span>
-                    ABC
-                    <br />
-                    Limo
-                  </span>
+                <i class="ri-car-line"></i>
+                    <span>
+                    ABC <br />Limo 
+                    </span>
                 </Link>
               </h1>
             </div>
