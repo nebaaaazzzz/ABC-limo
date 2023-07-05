@@ -192,10 +192,11 @@
     height: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;  /* Positioned to the right */
     z-index: 9999;
     display: none;
   }
+  
 
   .menu {
     width: 250px;

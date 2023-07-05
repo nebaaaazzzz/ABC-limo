@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-
-import { Container, Row, Col } from "reactstrap";
-import { Link, NavLink } from "react-router-dom";
-import { Icon } from '@iconify/react';
+import { Box, Flex, Link, Grid, Icon, useColorModeValue, useDisclosure, IconButton, Collapse } from "@chakra-ui/react";
+import { Link as RouterLink, NavLink } from "react-router-dom";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import "../../styles/header.css";
+import { Icon as Iconify } from '@iconify/react';
 
 const navLinks = [
   {
@@ -18,7 +18,6 @@ const navLinks = [
     path: "/cars",
     display: "Cars",
   },
-
   {
     path: "/blogs",
     display: "Blog",
@@ -30,102 +29,62 @@ const navLinks = [
 ];
 
 const Header = () => {
-  const menuRef = useRef(null);
-
-  const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <header className="header">
-      {/* ============ header top ============ */}
-   
-
-      {/* =============== header middle =========== */}
-      <div className="header__middle">
-        <Container>
-          <Row>
-            <Col lg="4" md="3" sm="4">
-              <div className="logo">
-                <h1>
-                  <Link to="/home" className=" d-flex align-items-center gap-2">
-                  <Icon icon="mdi:car-limousine" color="white" />
-                    <span className="abc">
-                       ABC<br />Limo  
-                    </span>
-                  </Link>
-                </h1>
-              </div>
-            </Col>
-
-            <Col lg="3" md="3" sm="4">
-              <div className="header__location d-flex align-items-center gap-2">
-                <span>
-                  <i class="ri-earth-line"></i>
-                </span>
-                <div className="header__location-content">
-                  <h4 >United States</h4>
-                  <h6>Seattle, Washington USA</h6>
-                </div>
-              </div>
-            </Col>
-
-            <Col lg="3" md="3" sm="4">
-              <div className="header__location d-flex align-items-center gap-2">
-                <span>
-                  <i class="ri-time-line"></i>
-                </span>
-                <div className="header__location-content">
-                  
-                  <h7 className="h7">    24/7</h7>
-                </div>
-              </div>
-            </Col>
-
-            <Col
-              lg="2"
-              md="3"
-              sm="0"
-              className=" d-flex align-items-center justify-content-end "
+    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+        <IconButton
+          size={'md'}
+          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+          aria-label={'Open Menu'}
+          display={{ md: !isOpen ? 'none' : 'inherit' }}
+          onClick={onToggle}
+        />
+        <Box>
+          <Link as={RouterLink} to="/home">
+            <Flex alignItems={'center'}>
+              <Iconify icon="mdi:car-limousine" color="white" />
+              <Box ml={2}>ABC<br />Limo</Box>
+            </Flex>
+          </Link>
+        </Box>
+        <Box display={{ base: 'none', md: 'flex' }}>
+          {navLinks.map((item, index) => (
+            <NavLink
+              to={item.path}
+              fontSize={'xl'}
+              color='gray.500'
+              _hover={{ textDecoration: 'none', color: 'gray.800' }}
+              key={index}
+              activeClassName='active-link'  // apply 'active-link' class when route is active
             >
-              <button className="header__btn btn ">
-                <Link to="/contact">
-                  <i class="ri-phone-line"></i> Request a call
-                </Link>
-              </button>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+              {item.display}
+            </NavLink>
+          ))}
+        </Box>
+      </Flex>
 
-      {/* ========== main navigation =========== */}
-
-      <div className="main__navbar">
-        <Container>
-          <div className="navigation__wrapper d-flex align-items-center justify-content-between">
-            <span className="mobile__menu">
-              <i class="ri-menu-line" onClick={toggleMenu}></i>
-            </span>
-
-            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
-              <div className="menu">
-                {navLinks.map((item, index) => (
-                  <NavLink
-                    to={item.path}
-                    className={(navClass) =>
-                      navClass.isActive ? "nav__active nav__item" : "nav__item"
-                    }
-                    key={index}
-                  >
-                    {item.display}
-                  </NavLink>
-                ))}
-              </div>
-            </div>
-            
-
-          </div>
-        </Container>
-      </div>
-    </header>
+      <Collapse in={isOpen} animateOpacity>
+        <Grid
+          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+          gap={{ base: 4, md: 8 }}
+        >
+          {navLinks.map((item, index) => (
+            <NavLink
+              to={item.path}
+              fontSize={'xl'}
+              color='gray.500'
+              _hover={{ textDecoration: 'none', color: 'gray.800' }}
+              key={index}
+              activeClassName='active-link'  // apply 'active-link' class when route is active
+            >
+              {item.display}
+            </NavLink>
+          ))}
+        </Grid>
+      </Collapse>
+    </Box>
   );
 };
 
